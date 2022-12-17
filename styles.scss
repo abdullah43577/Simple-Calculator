@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.blue {
+  height: 100vh;
+  width: 100%;
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(222, 26%, 31%);
+  text-transform: uppercase;
+  color: #f3f3f3;
+}
+
+main {
+  width: 400px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  > p {
+    text-transform: lowercase;
+    font-size: 20px;
+  }
+}
+
+.themeCont {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+
+  > .tripple__toggle {
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(223, 31%, 20%);
+    width: 50px;
+  }
+}
+
+.radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  input[name="toggle"] {
+    appearance: none;
+    border-radius: 50%;
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  input[name="toggle"]:hover {
+    cursor: pointer;
+  }
+
+  #one {
+    opacity: 1;
+    background-color: hsl(6, 63%, 50%);
+  }
+
+  #two {
+    background-color: hsl(25, 98%, 40%);
+  }
+
+  #three {
+    background-color: hsl(176, 100%, 44%);
+  }
+
+  label {
+    font-size: 10px;
+  }
+
+  > label {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.bluebg-input {
+  width: 100%;
+  height: 80px;
+  font-size: 32px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  background-color: hsl(224, 36%, 15%);
+  color: #f3f3f3;
+  text-align: right;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* later render this using the scss */
+.calcDetails {
+  display: grid;
+  grid-template-areas:
+    "seven eight nine del"
+    "four five six plus"
+    "one two three minus"
+    "dot zero slash times"
+    "reset reset equal equal";
+  gap: 1.5rem;
+  background-color: hsl(223, 31%, 20%);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+
+  :first-child {
+    grid-area: one;
+  }
+
+  :nth-child(2) {
+    grid-area: two;
+  }
+
+  :nth-child(3) {
+    grid-area: three;
+  }
+
+  :nth-child(4) {
+    grid-area: four;
+  }
+
+  :nth-child(5) {
+    grid-area: five;
+  }
+
+  :nth-child(6) {
+    grid-area: six;
+  }
+
+  :nth-child(7) {
+    grid-area: seven;
+  }
+
+  :nth-child(8) {
+    grid-area: eight;
+  }
+
+  :nth-child(9) {
+    grid-area: nine;
+  }
+
+  :nth-child(10) {
+    grid-area: zero;
+  }
+
+  :nth-child(11) {
+    grid-area: plus;
+  }
+
+  :nth-child(12) {
+    grid-area: minus;
+  }
+
+  :nth-child(13) {
+    grid-area: times;
+    font-size: 20px;
+    padding-top: 13px;
+  }
+
+  :nth-child(14) {
+    grid-area: slash;
+  }
+
+  :nth-child(15) {
+    grid-area: dot;
+  }
+
+  :nth-child(16) {
+    grid-area: equal;
+  }
+
+  :nth-child(17) {
+    grid-area: reset;
+  }
+
+  :nth-child(18) {
+    grid-area: del;
+  }
+}
+
+.button {
+  background-color: hsl(30, 25%, 89%);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: hsl(221, 14%, 31%);
+  font-size: 25px;
+  font-weight: bold;
+  transition: all 1s ease-out;
+  width: 70px;
+  height: 40px;
+  box-shadow: 0px 3px hsl(28, 16%, 65%);
+
+  &:hover {
+    background-color: #f3f3f3;
+  }
+}
+
+.equal {
+  background-color: hsl(6, 63%, 50%);
+  color: #f3f3f3;
+  box-shadow: 0px 3px red;
+
+  &:hover {
+    background-color: hsl(6, 70%, 34%);
+  }
+}
+
+.reset,
+.delete {
+  background-color: hsl(222, 26%, 31%);
+  color: #f3f3f3;
+  font-size: 20px;
+  padding-top: 13px;
+  box-shadow: 0px 3px hsl(225, 21%, 49%);
+}
+
+.reset:hover,
+.delete:hover {
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0px 3px hsl(222, 26%, 31%);
+}
+
+.reset,
+.equal {
+  width: auto;
+}
+
+/* footer */
+footer {
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* white background color code section */
+.white {
+  background-color: hsl(0, 0%, 90%);
+  color: #000;
+}
+
+.whitebg-input {
+  background-color: hsl(0, 0%, 93%);
+  color: hsl(60, 10%, 19%);
+}
+
+.whitebg-calcDetails {
+  background-color: hsl(0, 5%, 81%);
+}
+
+.whitebg-num {
+  color: hsl(60, 10%, 19%);
+
+  &:hover {
+    background-color: #f3f3f3;
+  }
+}
+
+.resetbg-white,
+.delbg-white {
+  background-color: hsl(185, 42%, 37%);
+  box-shadow: 0px 3px hsl(185, 58%, 25%);
+}
+
+.resetbg-white:hover,
+.delbg-white:hover {
+  background-color: hsl(185, 58%, 25%);
+  box-shadow: 0px 3px hsl(185, 42%, 37%);
+}
+
+.equalbg-white {
+  background-color: hsl(25, 98%, 40%);
+  box-shadow: 0px 3px hsl(25, 99%, 27%);
+
+  &:hover {
+    background-color: hsl(25, 99%, 27%);
+    box-shadow: 0px 3px hsl(25, 98%, 40%);
+  }
+}
+
+/* purple background section */
+.darkPurple {
+  background-color: hsl(268, 75%, 9%);
+  color: hsl(52, 100%, 62%);
+}
+
+.darkPurplebg-input {
+  background-color: hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
+}
+
+.darkPurplebg-calcDetails {
+  background-color: hsl(268, 71%, 12%);
+}
+
+.darkPurplebg-num {
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0px 3px hsl(285, 91%, 52%);
+  color: hsl(52, 100%, 62%);
+
+  &:hover {
+    background-color: hsl(285, 91%, 52%);
+    box-shadow: 0px 3px hsl(281, 89%, 26%);
+  }
+}
+
+.resetbg-purple,
+.delbg-purple {
+  background-color: hsl(268, 47%, 21%);
+  box-shadow: 0px 3px hsl(290, 70%, 36%);
+}
+
+.resetbg-purple:hover,
+.delbg-purple:hover {
+  background-color: hsl(290, 70%, 36%);
+  box-shadow: 0px 3px hsl(268, 47%, 21%);
+}
+
+.equalbg-purple {
+  background-color: hsl(176, 100%, 44%);
+  box-shadow: 0px 3px hsl(177, 92%, 70%);
+
+  &:hover {
+    background-color: hsl(177, 92%, 70%);
+    box-shadow: 0px 3px hsl(176, 100%, 44%);
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 300px;
+  }
+
+  .button {
+    width: 50px;
+    height: auto;
+  }
+
+  .reset,
+  .equal {
+    width: auto;
+  }
+}

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
-
 * {
   padding: 0;
   margin: 0;
@@ -13,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(222, 26%, 31%);
+  background-color: hsl(222deg, 26%, 31%);
   text-transform: uppercase;
   color: #f3f3f3;
 }
@@ -27,7 +26,6 @@ main {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-
 #header > p {
   text-transform: lowercase;
   font-size: 20px;
@@ -41,38 +39,13 @@ main {
   position: relative;
   padding: 10px 0;
 }
-
-.tripple__toggle {
+.themeCont > .tripple__toggle {
   display: flex;
   justify-content: center;
   border-radius: 50px;
   border: none;
-  background-color: hsl(223, 31%, 20%);
+  background-color: hsl(223deg, 31%, 20%);
   width: 50px;
-}
-
-input[name="toggle"] {
-  appearance: none;
-  border-radius: 50%;
-  opacity: 0;
-  width: 15px;
-  height: 15px;
-}
-
-input[name="toggle"]:hover {
-  cursor: pointer;
-}
-
-#one {
-  opacity: 1;
-  background-color: hsl(6, 63%, 50%);
-}
-
-#two {
-  background-color: hsl(25, 98%, 40%);
-}
-#three {
-  background-color: hsl(176, 100%, 44%);
 }
 
 .radio {
@@ -82,11 +55,31 @@ input[name="toggle"]:hover {
   flex-direction: column;
   gap: 0.5rem;
 }
-
-label {
+.radio input[name=toggle] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+}
+.radio input[name=toggle]:hover {
+  cursor: pointer;
+}
+.radio #one {
+  opacity: 1;
+  background-color: hsl(6deg, 63%, 50%);
+}
+.radio #two {
+  background-color: hsl(25deg, 98%, 40%);
+}
+.radio #three {
+  background-color: hsl(176deg, 100%, 44%);
+}
+.radio label {
   font-size: 10px;
 }
-
 .radio > label {
   position: absolute;
   top: 0;
@@ -99,9 +92,11 @@ label {
   border-radius: 10px;
   outline: none;
   border: none;
-  padding-inline-start: 10px;
-  padding-inline-end: 10px;
-  background-color: hsl(224, 36%, 15%);
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
+  -webkit-padding-end: 10px;
+          padding-inline-end: 10px;
+  background-color: hsl(224deg, 36%, 15%);
   color: #f3f3f3;
   text-align: right;
   font-family: "League Spartan", sans-serif;
@@ -110,135 +105,110 @@ label {
 /* later render this using the scss */
 .calcDetails {
   display: grid;
-  grid-template-areas:
-    "seven eight nine del"
-    "four five six plus"
-    "one two three minus"
-    "dot zero slash times"
-    "reset reset equal equal";
+  grid-template-areas: "seven eight nine del" "four five six plus" "one two three minus" "dot zero slash times" "reset reset equal equal";
   gap: 1.5rem;
-  background-color: hsl(223, 31%, 20%);
+  background-color: hsl(223deg, 31%, 20%);
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
 }
-
 .calcDetails :first-child {
   grid-area: one;
 }
-
 .calcDetails :nth-child(2) {
   grid-area: two;
 }
-
 .calcDetails :nth-child(3) {
   grid-area: three;
 }
-
 .calcDetails :nth-child(4) {
   grid-area: four;
 }
-
 .calcDetails :nth-child(5) {
   grid-area: five;
 }
-
 .calcDetails :nth-child(6) {
   grid-area: six;
 }
-
 .calcDetails :nth-child(7) {
   grid-area: seven;
 }
-
 .calcDetails :nth-child(8) {
   grid-area: eight;
 }
-
 .calcDetails :nth-child(9) {
   grid-area: nine;
 }
-
 .calcDetails :nth-child(10) {
   grid-area: zero;
 }
-
 .calcDetails :nth-child(11) {
   grid-area: plus;
 }
-
 .calcDetails :nth-child(12) {
   grid-area: minus;
 }
-
 .calcDetails :nth-child(13) {
   grid-area: times;
   font-size: 20px;
   padding-top: 13px;
 }
-
 .calcDetails :nth-child(14) {
   grid-area: slash;
 }
-
 .calcDetails :nth-child(15) {
   grid-area: dot;
 }
-
 .calcDetails :nth-child(16) {
   grid-area: equal;
 }
-
 .calcDetails :nth-child(17) {
   grid-area: reset;
 }
-
 .calcDetails :nth-child(18) {
   grid-area: del;
 }
 
 .button {
-  background-color: hsl(30, 25%, 89%);
+  background-color: hsl(30deg, 25%, 89%);
   border-radius: 5px;
   padding: 10px;
   text-align: center;
   cursor: pointer;
-  color: hsl(221, 14%, 31%);
+  color: hsl(221deg, 14%, 31%);
   font-size: 25px;
   font-weight: bold;
   transition: all 1s ease-out;
   width: 70px;
   height: 40px;
-  box-shadow: 0px 3px hsl(28, 16%, 65%);
+  box-shadow: 0px 3px hsl(28deg, 16%, 65%);
 }
-
 .button:hover {
   background-color: #f3f3f3;
 }
 
 .equal {
-  background-color: hsl(6, 63%, 50%);
+  background-color: hsl(6deg, 63%, 50%);
   color: #f3f3f3;
   box-shadow: 0px 3px red;
 }
-
 .equal:hover {
-  background-color: hsl(6, 70%, 34%);
+  background-color: hsl(6deg, 70%, 34%);
 }
 
 .reset,
 .delete {
-  background-color: hsl(222, 26%, 31%);
+  background-color: hsl(222deg, 26%, 31%);
   color: #f3f3f3;
   font-size: 20px;
   padding-top: 13px;
-  box-shadow: 0px 3px hsl(225, 21%, 49%);
+  box-shadow: 0px 3px hsl(225deg, 21%, 49%);
 }
 
 .reset:hover,
 .delete:hover {
-  background-color: hsl(225, 21%, 49%);
-  box-shadow: 0px 3px hsl(222, 26%, 31%);
+  background-color: hsl(225deg, 21%, 49%);
+  box-shadow: 0px 3px hsl(222deg, 26%, 31%);
 }
 
 .reset,
@@ -256,109 +226,103 @@ footer {
 
 /* white background color code section */
 .white {
-  background-color: hsl(0, 0%, 90%);
+  background-color: hsl(0deg, 0%, 90%);
   color: #000;
 }
 
 .whitebg-input {
-  background-color: hsl(0, 0%, 93%);
-  color: hsl(60, 10%, 19%);
+  background-color: hsl(0deg, 0%, 93%);
+  color: hsl(60deg, 10%, 19%);
 }
 
 .whitebg-calcDetails {
-  background-color: hsl(0, 5%, 81%);
+  background-color: hsl(0deg, 5%, 81%);
 }
 
 .whitebg-num {
-  color: hsl(60, 10%, 19%);
+  color: hsl(60deg, 10%, 19%);
 }
-
 .whitebg-num:hover {
   background-color: #f3f3f3;
 }
 
 .resetbg-white,
 .delbg-white {
-  background-color: hsl(185, 42%, 37%);
-  box-shadow: 0px 3px hsl(185, 58%, 25%);
+  background-color: hsl(185deg, 42%, 37%);
+  box-shadow: 0px 3px hsl(185deg, 58%, 25%);
 }
 
 .resetbg-white:hover,
 .delbg-white:hover {
-  background-color: hsl(185, 58%, 25%);
-  box-shadow: 0px 3px hsl(185, 42%, 37%);
+  background-color: hsl(185deg, 58%, 25%);
+  box-shadow: 0px 3px hsl(185deg, 42%, 37%);
 }
 
 .equalbg-white {
-  background-color: hsl(25, 98%, 40%);
-  box-shadow: 0px 3px hsl(25, 99%, 27%);
+  background-color: hsl(25deg, 98%, 40%);
+  box-shadow: 0px 3px hsl(25deg, 99%, 27%);
 }
-
 .equalbg-white:hover {
-  background-color: hsl(25, 99%, 27%);
-  box-shadow: 0px 3px hsl(25, 98%, 40%);
+  background-color: hsl(25deg, 99%, 27%);
+  box-shadow: 0px 3px hsl(25deg, 98%, 40%);
 }
 
 /* purple background section */
 .darkPurple {
-  background-color: hsl(268, 75%, 9%);
-  color: hsl(52, 100%, 62%);
+  background-color: hsl(268deg, 75%, 9%);
+  color: hsl(52deg, 100%, 62%);
 }
 
 .darkPurplebg-input {
-  background-color: hsl(268, 71%, 12%);
-  color: hsl(52, 100%, 62%);
+  background-color: hsl(268deg, 71%, 12%);
+  color: hsl(52deg, 100%, 62%);
 }
 
 .darkPurplebg-calcDetails {
-  background-color: hsl(268, 71%, 12%);
+  background-color: hsl(268deg, 71%, 12%);
 }
 
 .darkPurplebg-num {
-  background-color: hsl(281, 89%, 26%);
-  box-shadow: 0px 3px hsl(285, 91%, 52%);
-  color: hsl(52, 100%, 62%);
+  background-color: hsl(281deg, 89%, 26%);
+  box-shadow: 0px 3px hsl(285deg, 91%, 52%);
+  color: hsl(52deg, 100%, 62%);
 }
-
 .darkPurplebg-num:hover {
-  background-color: hsl(285, 91%, 52%);
-  box-shadow: 0px 3px hsl(281, 89%, 26%);
+  background-color: hsl(285deg, 91%, 52%);
+  box-shadow: 0px 3px hsl(281deg, 89%, 26%);
 }
 
 .resetbg-purple,
 .delbg-purple {
-  background-color: hsl(268, 47%, 21%);
-  box-shadow: 0px 3px hsl(290, 70%, 36%);
+  background-color: hsl(268deg, 47%, 21%);
+  box-shadow: 0px 3px hsl(290deg, 70%, 36%);
 }
 
 .resetbg-purple:hover,
 .delbg-purple:hover {
-  background-color: hsl(290, 70%, 36%);
-  box-shadow: 0px 3px hsl(268, 47%, 21%);
+  background-color: hsl(290deg, 70%, 36%);
+  box-shadow: 0px 3px hsl(268deg, 47%, 21%);
 }
 
 .equalbg-purple {
-  background-color: hsl(176, 100%, 44%);
-  box-shadow: 0px 3px hsl(177, 92%, 70%);
+  background-color: hsl(176deg, 100%, 44%);
+  box-shadow: 0px 3px hsl(177deg, 92%, 70%);
 }
-
 .equalbg-purple:hover {
-  background-color: hsl(177, 92%, 70%);
-  box-shadow: 0px 3px hsl(176, 100%, 44%);
+  background-color: hsl(177deg, 92%, 70%);
+  box-shadow: 0px 3px hsl(176deg, 100%, 44%);
 }
 
 @media (max-width: 500px) {
   main {
     width: 300px;
   }
-
   .button {
     width: 50px;
     height: auto;
   }
-
   .reset,
-  .equal {
+.equal {
     width: auto;
   }
-}
+}/*# sourceMappingURL=styles.css.map */
