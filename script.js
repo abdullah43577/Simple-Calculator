@@ -84,95 +84,101 @@ reset.addEventListener("click", () => (input.value = ""));
 /* 
 
 // RADIO BUTTONS
-- the nodelist of radio buttons all listen for click events and run a specific piece of code that removes and add background colors based on the radio button selected
+- the nodelist of radio buttons all listen for click events and invokes the switchClass function
+- the switchClass() function receives 4 arguments,
+** The first argument being - the element to be styled
+** The second argument being - the class to be added at the click of that button
+** The third argument being - the class to be removed at the click of that button
+** The fourth argument being - the class to be removed at the click of that button
 
+// SWITCH BUTTON2 - switchClass2()
+- This work similarly like the switchClass() function which also accepts 4 arguments. The difference being that there's an inverse that only executes if the third background button was toggled.
+- I checks if i passed in an inverse argument, if so It applies the code in the if block to the passed in argument, in the reverse other.
 */
 
+const switchClass = (element, firstBg, secondBG, thirdBg) => {
+  element.classList.add(firstBg);
+  element.classList.remove(secondBG);
+  element.classList.remove(thirdBg);
+};
+
 radioBtns[0].addEventListener("click", () => {
-  body.classList.add("blue");
-  body.classList.remove("white");
-  body.classList.remove("darkPurple");
+  switchClass(body, "blue", "white", "darkPurple");
 
-  inputTXT.classList.add("bluebg-input");
-  inputTXT.classList.remove("whitebg-input");
-  inputTXT.classList.remove("darkPurplebg-input");
+  switchClass(inputTXT, "bluebg-input", "whitebg-input", "darkPurplebg-input");
 
-  calcBG.classList.add("calcDetails");
-  calcBG.classList.remove("whitebg-calcDetails");
-  calcBG.classList.remove("darkPurplebg-calcDetails");
+  switchClass(
+    calcBG,
+    "calcDetails",
+    "whitebg-calcDetails",
+    "darkPurplebg-calcDetails"
+  );
 
   buttons.forEach((btn) => {
-    btn.classList.add("button");
-    btn.classList.remove("whitebg-num");
-    btn.classList.remove("darkPurplebg-num");
+    switchClass(btn, "button", "whitebg-num", "darkPurplebg-num");
   });
 
-  reset.classList.add("reset");
-  reset.classList.remove("resetbg-white");
-  reset.classList.remove("resetbg-purple");
+  switchClass(reset, "reset", "resetbg-white", "resetbg-purple");
 
-  del.classList.add("delete");
-  del.classList.remove("delbg-white");
-  del.classList.remove("delbg-purple");
+  switchClass(del, "delete", "delbg-white", "delbg-purple");
 
-  equal.classList.add("equal");
-  equal.classList.remove("equalbg-white");
-  equal.classList.remove("equalbg-purple");
+  switchClass(equal, "equal", "equalbg-white", "equalbg-purple");
 });
 
+const switchClass2 = (element, secondBG, thirdBg, inverse) => {
+  element.classList.add(secondBG);
+  element.classList.remove(thirdBg);
+
+  if (inverse) {
+    element.classList.add(thirdBg);
+    element.classList.remove(secondBG);
+  }
+};
+
 radioBtns[1].addEventListener("click", () => {
-  body.classList.add("white");
-  body.classList.remove("darkPurple");
+  switchClass2(body, "white", "darkPurple");
 
-  inputTXT.classList.add("whitebg-input");
-  inputTXT.classList.remove("darkPurplebg-input");
+  switchClass2(inputTXT, "whitebg-input", "darkPurplebg-input");
 
-  calcBG.classList.add("whitebg-calcDetails");
-  calcBG.classList.remove("darkPurplebg-calcDetails");
+  switchClass2(calcBG, "whitebg-calcDetails", "darkPurplebg-calcDetails");
 
   buttons.forEach((btn) => {
-    btn.classList.add("whitebg-num");
-    btn.classList.remove("darkPurplebg-num");
+    switchClass2(btn, "whitebg-num", "darkPurplebg-num");
   });
 
-  reset.classList.add("resetbg-white");
-  reset.classList.remove("resetbg-purple");
+  switchClass2(reset, "resetbg-white", "resetbg-purple");
 
-  del.classList.add("delbg-white");
-  del.classList.remove("delbg-purple");
+  switchClass2(del, "delbg-white", "delbg-purple");
 
-  equal.classList.add("equalbg-white");
-  equal.classList.remove("equalbg-purple");
+  switchClass2(equal, "equalbg-white", "equalbg-purple");
 });
 
 radioBtns[2].addEventListener("click", () => {
-  body.classList.add("darkPurple");
-  body.classList.remove("white");
+  switchClass2(body, "white", "darkPurple", "inv");
 
-  inputTXT.classList.add("darkPurplebg-input");
-  inputTXT.classList.remove("whitebg-input");
+  switchClass2(inputTXT, "whitebg-input", "darkPurplebg-input", "inv");
 
-  calcBG.classList.add("darkPurplebg-calcDetails");
-  calcBG.classList.remove("whitebg-calcDetails");
+  switchClass2(
+    calcBG,
+    "whitebg-calcDetails",
+    "darkPurplebg-calcDetails",
+    "inv"
+  );
 
   buttons.forEach((btn) => {
-    btn.classList.add("darkPurplebg-num");
-    btn.classList.remove("whitebg-num");
+    switchClass2(btn, "whitebg-num", "darkPurplebg-num", "inv");
   });
 
-  reset.classList.add("resetbg-purple");
-  reset.classList.remove("resetbg-white");
+  switchClass2(reset, "resetbg-white", "resetbg-purple", "inv");
 
-  del.classList.add("delbg-purple");
-  del.classList.remove("delbg-white");
+  switchClass2(del, "delbg-white", "delbg-purple", "inv");
 
-  equal.classList.add("equalbg-purple");
-  equal.classList.remove("equalbg-white");
+  switchClass2(equal, "equalbg-white", "equalbg-purple", "inv");
 });
 
 // function for error handling incase the user enters a text
 function errorHandler() {
-  // if input.value includes any character from A-Z including A and Z
+  // if input.value includes any character from A-Z with A-z inclusive
   if (input.value.match(/[a-z]+/g)) {
     if (input.value.includes("x")) {
       console.log("let this pass");
@@ -181,5 +187,3 @@ function errorHandler() {
     }
   }
 }
-
-// write a function that adds and removes classing acceping the required argument instead of having to write them manually like you did above
