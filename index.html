@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body class="blue">
+    <main>
+      <section id="header">
+        <p>calc</p>
+
+        <div class="themeCont">
+          <label for="theme">Theme</label>
+
+          <div class="tripple__toggle">
+            <div class="radio">
+              <label for="1">1</label>
+              <input
+                type="radio"
+                name="toggle"
+                value="1"
+                checked
+                class="bluerdn"
+                id="one"
+              />
+            </div>
+
+            <div class="radio">
+              <label for="2">2</label>
+              <input
+                type="radio"
+                name="toggle"
+                value="2"
+                class="bluerdn"
+                id="two"
+              />
+            </div>
+
+            <div class="radio">
+              <label for="3">3</label>
+              <input
+                type="radio"
+                name="toggle"
+                value="3"
+                class="bluerdn"
+                id="three"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="inputSect">
+        <input type="text" class="bluebg-input" />
+      </section>
+
+      <section class="calcDetails">
+        <div class="button numb__operator">1</div>
+        <div class="button numb__operator">2</div>
+        <div class="button numb__operator">3</div>
+        <div class="button numb__operator">4</div>
+        <div class="button numb__operator">5</div>
+        <div class="button numb__operator">6</div>
+        <div class="button numb__operator">7</div>
+        <div class="button numb__operator">8</div>
+        <div class="button numb__operator">9</div>
+        <div class="button numb__operator">0</div>
+        <div class="button numb__operator">+</div>
+        <div class="button numb__operator">-</div>
+        <div class="button numb__operator">x</div>
+        <div class="button numb__operator">/</div>
+        <div class="button numb__operator">.</div>
+        <div class="button equal">=</div>
+        <div class="button reset">reset</div>
+        <div class="button delete">del</div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#" target="_blank">Abdullah Ayoola</a>.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
