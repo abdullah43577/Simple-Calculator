@@ -346,3 +346,19 @@ footer {
   background-color: hsl(177, 92%, 70%);
   box-shadow: 0px 3px hsl(176, 100%, 44%);
 }
+
+@media (max-width: 500px) {
+  main {
+    width: 300px;
+  }
+
+  .button {
+    width: 50px;
+    height: auto;
+  }
+
+  .reset,
+  .equal {
+    width: auto;
+  }
+}
