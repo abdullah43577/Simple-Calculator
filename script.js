@@ -1,4 +1,5 @@
-"use strict";
+// "use strict";
+
 const numbOperator = document.querySelectorAll(".numb__operator");
 const input = document.querySelector("input[type='text']");
 const equal = document.querySelector(".equal");
@@ -68,6 +69,8 @@ equal.addEventListener("click", () => {
     let result = eval(input.value);
     input.value = result;
   }
+
+  if (isNaN(input.value)) input.value = 0;
 });
 
 del.addEventListener("click", () => {
