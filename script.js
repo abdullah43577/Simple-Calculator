@@ -49,7 +49,7 @@ arr.forEach((element) => {
   });
 });
 
-numbOperator.forEach((numbOP) => {
+numbOperator.forEach((numbOP, i) => {
   numbOP.addEventListener("click", () => {
     input.value += numbOP.textContent;
   });

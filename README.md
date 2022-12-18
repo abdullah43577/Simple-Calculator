@@ -14,7 +14,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -51,26 +50,49 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+I learnt how to implement a three state toggle button. And it wasn't hard.
 
 ```css
-.tripple__toggle {
+.radio {
   display: flex;
   justify-content: center;
-  border-radius: 50px;
-  border: none;
-  background-color: hsl(223, 31%, 20%);
-  width: 50px;
-}
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
 
-input[name="toggle"] {
-  appearance: none;
-  border-radius: 50%;
-  opacity: 0;
-  width: 15px;
-  height: 15px;
+  input[name="toggle"] {
+    appearance: none;
+    border-radius: 50%;
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  input[name="toggle"]:hover {
+    cursor: pointer;
+  }
+
+  #one {
+    opacity: 1;
+    background-color: hsl(6, 63%, 50%);
+  }
+
+  #two {
+    background-color: hsl(25, 98%, 40%);
+  }
+
+  #three {
+    background-color: hsl(176, 100%, 44%);
+  }
+
+  label {
+    font-size: 10px;
+  }
+
+  > label {
+    position: absolute;
+    top: 0;
+  }
 }
 ```
 
@@ -93,7 +115,7 @@ arr.forEach((element) => {
 
 ### Continued development
 
-I'll keep pushing myself to becoming better at programming. I really love programming, I don't ever regret the day I made my decision to join.
+I'll keep pushing myself to becoming better at programming. I really love programming, I don't ever regret the day I made the decision to join.
 
 ### Useful resources
 
