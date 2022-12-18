@@ -27,6 +27,7 @@ main {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 
   > p {
     text-transform: lowercase;
