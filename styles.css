@@ -333,7 +333,7 @@ footer {
     width: auto;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 426px) {
   footer {
     display: none;
   }
