@@ -50,16 +50,22 @@ arr.forEach((element) => {
   });
 });
 
+const button = document.querySelector("button");
+let enteredInput = [];
+
 numbOperator.forEach((numbOP, i) => {
   numbOP.addEventListener("click", () => {
+    enteredInput.push(numbOP.textContent);
+    console.log(enteredInput);
+    // checking to see if the '.' button was clicked
+    if (i === 14) button.disabled = true;
+
     input.value += numbOP.textContent;
   });
 });
 
 equal.addEventListener("click", () => {
   if (!input.value) return;
-
-  errorHandler();
 
   if (input.value.includes("x")) {
     let changer = input.value.replaceAll("x", "*");
@@ -71,6 +77,8 @@ equal.addEventListener("click", () => {
   }
 
   if (isNaN(input.value)) input.value = 0;
+
+  button.disabled = false;
 });
 
 del.addEventListener("click", () => {
@@ -80,9 +88,21 @@ del.addEventListener("click", () => {
     let slicer = input.value.slice(0, -1);
     input.value = slicer;
   }
+
+  // Deletes the last element in the array per click
+  enteredInput.pop();
+
+  if ((enteredInput = [])) {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
+  }
 });
 
-reset.addEventListener("click", () => (input.value = ""));
+reset.addEventListener("click", () => {
+  input.value = "";
+  button.disabled = false;
+});
 
 /* 
 
@@ -178,15 +198,3 @@ radioBtns[2].addEventListener("click", () => {
 
   switchClass2(equal, "equalbg-white", "equalbg-purple", "inv");
 });
-
-// function for error handling incase the user enters a text
-function errorHandler() {
-  // if input.value includes any character from A-Z with A-z inclusive
-  if (input.value.match(/[a-z]+/g)) {
-    if (input.value.includes("x")) {
-      console.log("let this pass");
-    } else {
-      alert("Please number only allowed");
-    }
-  }
-}

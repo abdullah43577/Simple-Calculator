@@ -26,6 +26,7 @@ main {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 }
 #header > p {
   text-transform: lowercase;
@@ -189,6 +190,10 @@ main {
   background: #f3f3f3;
 }
 
+button.button.numb__operator {
+  border: none;
+}
+
 .equal {
   background-color: hsl(6deg, 63%, 50%);
   color: #f3f3f3;
@@ -326,5 +331,10 @@ footer {
   .reset,
 .equal {
     width: auto;
+  }
+}
+@media (max-width: 375px) {
+  footer {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */

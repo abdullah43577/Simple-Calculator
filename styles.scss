@@ -220,6 +220,10 @@ main {
   }
 }
 
+button.button.numb__operator {
+  border: none;
+}
+
 .equal {
   background-color: hsl(6, 63%, 50%);
   color: #f3f3f3;
@@ -364,5 +368,11 @@ footer {
   .reset,
   .equal {
     width: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  footer {
+    display: none;
   }
 }
